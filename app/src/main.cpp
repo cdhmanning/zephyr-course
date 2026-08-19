@@ -21,6 +21,12 @@ int main(void)
 
     while (1) {
         if (gpio_pin_toggle_dt(&led) < 0) return 0;
+        k_msleep(SLEEP_TIME_MS/8);
+        if (gpio_pin_toggle_dt(&led) < 0) return 0;
+        k_msleep(SLEEP_TIME_MS/8);
+        if (gpio_pin_toggle_dt(&led) < 0) return 0;
+        k_msleep(SLEEP_TIME_MS/8);
+        if (gpio_pin_toggle_dt(&led) < 0) return 0;
 
         led_state = !led_state;
         LOG_INF("LED state: %s", led_state ? "ON" : "OFF");
