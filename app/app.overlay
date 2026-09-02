@@ -1,0 +1,7 @@
+// Application alias overlay
+
+/ {
+	aliases {
+		app-led = &green_led_2;
+	};
+};
