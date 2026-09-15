@@ -1,0 +1,6 @@
+board:
+  name: charles_board
+  full_name: Charles board copied from Nucleo U385RG Q
+  vendor: charles
+  socs:
+    - name: stm32u385xx
