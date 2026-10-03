@@ -1,7 +1,7 @@
 config OUR_SENSORLED
 	bool "Our sensor LED driver"
-	#default y
-	#depends on DT_HAS_OUR_SENSORLED_ENABLED
+	default y
+	depends on DT_HAS_OUR_SENSORLED_ENABLED
 	select GPIO
 	help
 	  Enables the custom driver for SENSORLED
