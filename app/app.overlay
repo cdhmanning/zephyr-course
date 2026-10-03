@@ -1,0 +1,6 @@
+/ {
+	our_sensorled0: our_sensorled {
+		compatible = "our,sensorled";
+		status = "okay";
+	};
+};

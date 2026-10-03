@@ -1,0 +1,3 @@
+description: Our sensor led driver binding
+compatable: "our,sensorled"
+include: base.yaml
