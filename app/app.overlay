@@ -1,6 +1,7 @@
 / {
 	our_sensorled0: our_sensorled {
 		compatible = "our,sensorled";
+		gpios = <&gpioa 5 GPIO_ACTIVE_HIGH>;
 		status = "okay";
 	};
 };

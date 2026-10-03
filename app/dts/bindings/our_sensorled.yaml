@@ -1,3 +1,9 @@
 description: Our sensor led driver binding
 compatible: "our,sensorled"
 include: base.yaml
+properties:
+    gpios:
+        type: phandle-array
+        required: true
+        description: The gpio driving the LED for our sensorled
+
