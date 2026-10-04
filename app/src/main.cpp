@@ -7,7 +7,7 @@
 int our_sensorled_get_count(const struct device *dev, uint32_t *value);
 int our_sensorled_set_count(const struct device *dev, uint32_t value);
 
-#define SLEEP_TIME_MS 2000
+#define SLEEP_TIME_MS 50000
 
 /* The devicetree node identifier for the "led0" alias. */
 #define LED_NODE DT_ALIAS(led0)
