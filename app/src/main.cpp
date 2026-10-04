@@ -2,6 +2,10 @@
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
+#include <our_drivers/our_sensorled.h>
+
+int our_sensorled_get_count(const struct device *dev, uint32_t *value);
+int our_sensorled_set_count(const struct device *dev, uint32_t value);
 
 #define SLEEP_TIME_MS 2000
 
@@ -17,12 +21,26 @@ static int sensorled_test(void)
     const struct device *sensorled = DEVICE_DT_GET(DT_NODELABEL(our_sensorled0));
     struct sensor_value val;
     int ret;
+    uint32_t fetch_count;
 
     if (!device_is_ready(sensorled)) {
 	LOG_INF("sensorled: device not ready.\n");
 	return 0;
     }
     while(1) {
+        ret = our_sensorled_get_count(sensorled, &fetch_count);
+        LOG_INF("sensor_get_count ret %d, value %u", ret, fetch_count);
+        /*
+         *The fetch count counts up every time a fetch is done.
+         * We fiddle with the fetch count by setting it, so that it counts from
+         * 10 to 20 then hops to 50 to 60 then back again.
+         */
+        if (fetch_count < 10 || fetch_count >= 60)
+            ret = our_sensorled_set_count(sensorled, 10);
+        else if (fetch_count >= 20 && fetch_count < 50)
+            ret = our_sensorled_set_count(sensorled, 50);
+        
+        
         ret = sensor_sample_fetch(sensorled);
         LOG_INF("sensor_sample_fetch() returned %d", ret);
         k_msleep(SLEEP_TIME_MS);
