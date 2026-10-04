@@ -1,3 +1,6 @@
 if (CONFIG_OUR_SENSORLED)
 	target_sources(app PRIVATE our_sensorled.c)
 endif()
+if (CONFIG_OUR_SENSORLED_SHELL)
+	target_sources(app PRIVATE our_sensorled_shell.c)
+endif()

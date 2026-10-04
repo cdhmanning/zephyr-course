@@ -5,3 +5,10 @@ config OUR_SENSORLED
 	select GPIO
 	help
 	  Enables the custom driver for SENSORLED
+
+config OUR_SENSORLED_SHELL
+	bool "Our sensor LED driver shell"
+	default y
+	depends on OUR_SENSORLED && SHELL
+	help
+	  Enables the custom driver sensorled shell
