@@ -118,8 +118,11 @@ ZTEST(ring_buf_push_pop, test_push_full_returns_enospc)
         zassert_ok(rb_push(2),          "Failed push 2");
         zassert_ok(rb_push(3),          "Failed push 3");
         zassert_ok(rb_push(4),          "Failed push 4");
+        zassert_true(rb_is_full(),      "Check buffer is full");
 
         zassert_equal(rb_push(5), -ENOSPC, "Full buffer should return -ENOSPC");
+        zassert_equal(rb_count(), 4,    "Failed push should not consume space");
+        zassert_true(rb_is_full(),      "Check buffer is still full");
 }
 
 /*
