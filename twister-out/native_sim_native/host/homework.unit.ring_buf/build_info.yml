@@ -1,0 +1,45 @@
+cmake:
+  application:
+    configuration-dir: '/opt/zephyr/iomico-zephyr-fundamentals/module02/zephyr-course/tests/ring_buf'
+    source-dir: '/opt/zephyr/iomico-zephyr-fundamentals/module02/zephyr-course/tests/ring_buf'
+  board:
+    name: 'native_sim'
+    path:
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/boards/native/native_sim'
+    qualifiers: 'native'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/dts/bindings'
+    files:
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/boards/native/native_sim/native_sim.dts'
+    include-dirs:
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/modules/hal/stm32/dts'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/include'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/include/zephyr'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/dts/common'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/dts/vendor'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/dts/rx'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/dts/x86'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/dts/xtensa'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/dts/sparc'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/dts/riscv'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/dts/posix'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/dts/arm64'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/dts/arm'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/dts/arc'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/dts'
+  kconfig:
+    files:
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/boards/native/native_sim/native_sim_defconfig'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/zephyr-course/tests/ring_buf/prj.conf'
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+    user-files:
+     - '/opt/zephyr/iomico-zephyr-fundamentals/module02/zephyr-course/tests/ring_buf/prj.conf'
+  toolchain:
+    name: 'host'
+    path: ''
+  zephyr:
+    version: '4.2.0'
+    zephyr-base: '/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr'
+version: '0.1.0'

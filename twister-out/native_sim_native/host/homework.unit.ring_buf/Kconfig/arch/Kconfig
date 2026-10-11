@@ -1,0 +1,11 @@
+# Load Zephyr Arch Kconfig descriptions.
+osource "/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/arch/rx/Kconfig"
+osource "/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/arch/x86/Kconfig"
+osource "/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/arch/xtensa/Kconfig"
+osource "/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/arch/sparc/Kconfig"
+osource "/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/arch/riscv/Kconfig"
+osource "/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/arch/posix/Kconfig"
+osource "/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/arch/mips/Kconfig"
+osource "/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/arch/arm64/Kconfig"
+osource "/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/arch/arm/Kconfig"
+osource "/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/arch/arc/Kconfig"
