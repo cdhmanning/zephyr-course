@@ -1,2 +1,0 @@
-# Load Zephyr board Kconfig descriptions.
-osource "/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/zephyr/boards/native/native_sim/Kconfig"

@@ -1,2 +1,0 @@
-"cmsis_6":"/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/modules/hal/cmsis_6":"${ZEPHYR_CMSIS_6_CMAKE_DIR}"
-"hal_stm32":"/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/modules/hal/stm32":"/opt/zephyr/iomico-zephyr-fundamentals/module02/deps/modules/hal/stm32"
