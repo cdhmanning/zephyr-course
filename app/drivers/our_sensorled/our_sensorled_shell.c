@@ -5,6 +5,15 @@
 #include <zephyr/shell/shell.h>
 #include <zephyr/drivers/sensor.h>
 
+/*
+ * We only allow the set value to be set to
+ * the range of 0 .. SET_COUNT_MAX.
+ */
+#define SET_COUNT_MAX 1000
+
+#define STRINGIFY_HELPER(x) #x
+#define STRINGIFY(x) STRINGIFY_HELPER(x)
+
 static int cmd_fetch(const struct shell *sh, size_t argc, char **argv)
 {
     const struct device *sensorled = DEVICE_DT_GET(DT_NODELABEL(our_sensorled0));
@@ -76,8 +85,9 @@ static int cmd_setcount(const struct shell *sh, size_t argc, char **argv)
 
     val = atoi(argv[1]);
 
-    if (val < 0) {
-        shell_error(sh, "Error: count cannot be negative");
+    if (val < 0 || val > SET_COUNT_MAX) {
+        shell_error(sh, "Error: count can only be set to the range (%d-%d)",
+                    0, SET_COUNT_MAX);
         return -EINVAL;
     }
 
@@ -95,7 +105,7 @@ SHELL_STATIC_SUBCMD_SET_CREATE(sensor_subcommands,
     SHELL_CMD(fetch, NULL, "Call sensor fetch handler.", cmd_fetch),
     SHELL_CMD(read, NULL, "Call sensor get handler", cmd_read),
     SHELL_CMD(info, NULL, "Print device name and ready.", cmd_info),
-    SHELL_CMD_ARG(setcount, NULL, "Set counter to value", cmd_setcount, 2, 0),
+    SHELL_CMD_ARG(setcount, NULL, "Set counter to value 0-" STRINGIFY(SET_COUNT_MAX), cmd_setcount, 2, 0),
     SHELL_CMD(getcount, NULL, "Get the counter value", cmd_getcount),
     SHELL_SUBCMD_SET_END
 );
